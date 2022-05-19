@@ -8,7 +8,7 @@ export default function Details({ itemsDetail }) {
         <Link href="/">
           <div className="flex justify-end items-center pr-12 cursor-pointer hover:transition hover:-translate-y-2 duration-700">
             <svg
-              class="w-6 h-6"
+              className="w-6 h-6"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 576 512"
               fill="#e0f2fe"
@@ -25,40 +25,40 @@ export default function Details({ itemsDetail }) {
         </p>
       </div>
       <div className="p-12 bg-sky-100">
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-sky-900 dark:text-gray-400">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-sky-900 dark:text-gray-400">
               <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Object ID
                 </th>
 
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Author Name
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Type
                 </th>
-                <th scope="col" class="px-6 py-3 text-right">
+                <th scope="col" className="px-6 py-3 text-right">
                   Created at
                 </th>
               </tr>
             </thead>
             <tbody>
               {itemsDetail.children.map((k) => (
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                   <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                    className="px-6 py-4 font-medium text-gray-900 dark:text-white"
                   >
                     {k.id}
                   </th>
 
-                  <td class="px-6 py-4 capitalize">{k.author}</td>
+                  <td className="px-6 py-4 capitalize">{k.author}</td>
 
-                  <td class="px-6 py-4">{k.type}</td>
+                  <td className="px-6 py-4">{k.type}</td>
 
-                  <td class="px-6 py-4 text-right cursor-pointer">
+                  <td className="px-6 py-4 text-right cursor-pointer">
                     {k.created_at.slice(0, 10)}
                   </td>
                 </tr>
