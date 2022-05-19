@@ -1,7 +1,7 @@
 import { getAxios } from "../../utils/requests";
 import Link from "next/link";
 export default function Details({ itemsDetail }) {
-  console.log(itemsDetail, "DetailsData00");
+  // console.log(itemsDetail, "DetailsData00");
   return (
     <>
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-12">
@@ -46,7 +46,10 @@ export default function Details({ itemsDetail }) {
             </thead>
             <tbody>
               {itemsDetail.children.map((k) => (
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <tr
+                  key={k.id}
+                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                >
                   <th
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 dark:text-white"

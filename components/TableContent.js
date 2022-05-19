@@ -1,6 +1,7 @@
 // import styles from "./BuiltImage.module.css";
 import Link from "next/link";
-export default function TableContent({ image }) {
+export default function TableContent({ dataList }) {
+  // console.log(image, "Image");
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -23,8 +24,11 @@ export default function TableContent({ image }) {
             </tr>
           </thead>
           <tbody>
-            {image.map((k) => (
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            {dataList.map((k) => (
+              <tr
+                key={k.created_at_i}
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+              >
                 <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 dark:text-white"

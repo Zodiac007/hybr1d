@@ -1,22 +1,16 @@
-import Head from "next/head";
-// import Header from "@components/Header";
-// import BuiltImage from "../components/BuiltImage";
 import Search from "../components/Search";
 import { getAxios } from "../utils/requests";
-// import Footer from "@components/Footer";
 
 export default function Home({ searchData }) {
-  console.log(searchData, "data1");
+  // console.log(searchData, "data1");
   return (
     <>
       <div className="bg-slate-900">
-        <div className="">
-          <main className="">
-            <div className="">
-              <Search />
-            </div>
-          </main>
-        </div>
+        <main className="">
+          <div className="">
+            <Search />
+          </div>
+        </main>
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import { getAxios } from "../utils/requests";
 // import styles from "./QueryImage.module.css";
 
 export function useQuery(passed) {
-  const [query, setQuery] = useState("pluto");
+  const [query, setQuery] = useState("hybrid");
   const [data, setData] = useState({});
 
   // let [planet, setPlanet] = useState(passed);
@@ -32,7 +32,7 @@ export function useQuery(passed) {
 
 export default function QueryImage() {
   const { query, setQuery, data } = useQuery();
-  let image = data.hits || null;
+  let dataList = data.hits || null;
 
   return (
     <>
@@ -41,9 +41,7 @@ export default function QueryImage() {
           Search any Query
         </h2>
         <div className="p-4 flex justify-center">
-          <label for="table-search" className="sr-only">
-            Search
-          </label>
+          <label className="sr-only">Search</label>
 
           <div className="relative mt-1">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -54,9 +52,9 @@ export default function QueryImage() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </div>
@@ -73,7 +71,9 @@ export default function QueryImage() {
           </div>
         </div>
       </div>
-      <div className="p-12">{image && <TableContent image={image} />}</div>
+      <div className="p-12">
+        {dataList && <TableContent dataList={dataList} />}
+      </div>
     </>
   );
 }
